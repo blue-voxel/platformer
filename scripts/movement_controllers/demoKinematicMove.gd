@@ -28,9 +28,9 @@ func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
-	var walk_left = Input.is_action_pressed("move_left")
-	var walk_right = Input.is_action_pressed("move_right")
-	var jump = Input.is_action_pressed("jump")
+	var walk_left = inMap.move.x < 0
+	var walk_right = 0 < inMap.move.x
+	var jump = inMap.move.y < 0
 	
 	var stop = true
 	

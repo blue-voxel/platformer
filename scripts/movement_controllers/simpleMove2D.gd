@@ -19,5 +19,6 @@ func _process(delta):
 			velocity = target
 	else:
 		velocity = target
+	
 	position += velocity * delta
 	pass
