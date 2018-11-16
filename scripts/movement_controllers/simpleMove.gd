@@ -11,11 +11,13 @@ func _ready():
 
 func _process(delta):
 	var target = inMap.move * topSpeed
-	var dvelocity = target - velocity #difference between target velocity and current velocity
-	if cutoff < dvelocity.length_squared(): 
-		velocity += dvelocity.normalized() * topSpeed * delta / damping #normalized() ensures that acceleration is constant (not proportional to distance to target)
+	if 0 < damping:
+		var dvelocity = target - velocity #difference between target velocity and current velocity
+		if cutoff < dvelocity.length_squared(): 
+			velocity += dvelocity.normalized() * topSpeed * delta / damping #normalized() ensures that acceleration is constant (not proportional to distance to target)
+		else:
+			velocity = target
 	else:
 		velocity = target
-	
 	position += velocity * delta
 	pass
