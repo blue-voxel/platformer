@@ -1,5 +1,7 @@
 extends Camera2D
-
+#Jordan: this script is supposed to lock on to the target and stay centred 
+#at all times, there is a bit of what machinists would call 'backlash'
+#in its current implementation, the source of this is a mystery
 export (NodePath) var trgt
 
 func _ready():
