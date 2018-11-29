@@ -20,8 +20,4 @@ func _process(delta):
 func _physics_process(delta):
 	if is_target_physical:
 		global_position = trgt.global_position
-		time += delta
-		if 1 < time:
-			print (global_position)
-			time = 0
 	pass

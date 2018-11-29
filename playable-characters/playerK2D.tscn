@@ -1,20 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/movement_controllers/demoKinematicMove.gd" type="Script" id=1]
+[ext_resource path="res://scripts/movement_controllers/surfaceMoveK2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://sprites/dev/arrow.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.93299, 10 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+indicator = NodePath("Sprite2")
+topSpeed = 120
+damping = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -25,8 +30,14 @@ _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.180007, 0.112982 )
+position = Vector2( 0.180007, 0.177326 )
 scale = Vector2( 0.797869, 1.00869 )
 shape = SubResource( 1 )
+
+[node name="indicator" type="Sprite" parent="." index="2"]
+
+rotation = 1.5708
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 

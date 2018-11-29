@@ -7,15 +7,34 @@ extends KinematicBody2D
 
 const FORCES = Vector2(0,98.1) #this should be inherited or read from utility in future iterations
 
+export (NodePath) var indicator
 export (float) var topSpeed = 120 #maximum speed (decimeters?)
 export (float) var damping = 1 #time (seconds) to reach top speed
 
 const CUTOFF = 0.1 #acceptable threshold to target speed
 var velocity = Vector2()
 var walk = 0.0
+var time = 0.0
+var slides = 0
+
+func _ready():
+	indicator = get_node(indicator)
 
 func _physics_process(delta):
 	velocity += FORCES * delta
+
+	var normal = Vector2()
+	slides += get_slide_count()
+	time += delta
+	if 0.2 < time:
+		print (slides)
+		slides = 0
+		time = 0
+	
+	for i in range(get_slide_count()):
+		normal += velocity * get_slide_collision(i).normal
+	normal = normal.normalized()
+	indicator.look_at(to_global(normal))
 	
 	#the following has been adapted from simpleMove2D.gd
 	var walkTarg = inMap.move.x * topSpeed
