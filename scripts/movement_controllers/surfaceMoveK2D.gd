@@ -7,7 +7,7 @@ extends KinematicBody2D
 
 const FORCES = Vector2(0,98.1) #this should be inherited or read from utility in future iterations
 
-export (float) var topSpeed = 50 #maximum speed (decimeters?)
+export (float) var topSpeed = 120 #maximum speed (decimeters?)
 export (float) var damping = 1 #time (seconds) to reach top speed
 
 const CUTOFF = 0.1 #acceptable threshold to target speed

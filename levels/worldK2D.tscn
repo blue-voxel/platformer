@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/imageMap.gd" type="Script" id=1]
 [ext_resource path="res://map.png" type="Texture" id=2]
 [ext_resource path="res://block2DStatic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/trackTarget.gd" type="Script" id=4]
 [ext_resource path="res://playable-characters/playerK2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/movement_controllers/surfaceMoveK2D.gd" type="Script" id=6]
 
 [node name="world" type="Node" index="0"]
 
@@ -30,18 +31,23 @@ smoothing_enabled = false
 smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 4 )
+_sections_unfolded = [ "Drag Margin", "Transform" ]
 trgt = NodePath("../KinematicBody2D")
 
 [node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 159.686, 57.6787 )
+position = Vector2( 154.741, 61.7029 )
+scale = Vector2( 0.845474, 0.874243 )
+script = ExtResource( 6 )
+topSpeed = 120.0
+damping = 1
 
 

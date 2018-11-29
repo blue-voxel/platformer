@@ -21,6 +21,7 @@ script = ExtResource( 1 )
 rotation = -0.347185
 scale = Vector2( 0.0341563, 0.0341563 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
