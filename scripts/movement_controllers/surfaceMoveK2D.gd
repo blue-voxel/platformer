@@ -5,7 +5,7 @@ extends KinematicBody2D
 #and moevemnt speed is determined by the friction on that surface and the force acting on the body towards that surface
 #implemnted properly it should provide an elegant mathematical solution for walking, sliding wallrunning, walljumping, etc.
 
-const FORCES = Vector2(0,98.1) #this should be inherited or read from utility in future iterations
+const FORCES = Vector2(0,695) #this should be inherited or read from utility in future iterations
 
 export (NodePath) var indicator
 export (float) var topSpeed = 120 #maximum speed (decimeters?)
@@ -14,7 +14,7 @@ export (float) var damping = 1 #time (seconds) to reach top speed
 const CUTOFF = 0.1 #acceptable threshold to target speed
 var velocity = Vector2()
 var walk = 0.0
-var time = 0.0
+var time = 0
 var slides = 0
 
 func _ready():
@@ -25,8 +25,8 @@ func _physics_process(delta):
 
 	var normal = Vector2()
 	slides += get_slide_count()
-	time += delta
-	if 0.2 < time:
+	time += 1
+	if 31 < time:
 		print (slides)
 		slides = 0
 		time = 0
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		normal += velocity * get_slide_collision(i).normal
 	normal = normal.normalized()
 	indicator.look_at(to_global(normal))
-	
+
 	#the following has been adapted from simpleMove2D.gd
 	var walkTarg = inMap.move.x * topSpeed
 	if 0 < damping:
