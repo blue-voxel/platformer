@@ -17,7 +17,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-indicator = NodePath("Sprite2")
+indicator = NodePath("indicator")
 topSpeed = 120
 damping = 1
 

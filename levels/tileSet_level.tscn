@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tilesets/dev8x.tres" type="TileSet" id=1]
+[ext_resource path="res://playable-characters/test_subject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/trackTarget.gd" type="Script" id=3]
+
+[node name="world" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -589809, 536870913, 0, -524273, 536870912, 0, -524272, 536870913, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458739, 1, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 536870913, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -393204, 1, 0, -393203, 0, 0, -393198, 536870913, 0, -327669, 1, 0, -327668, 0, 0, -327667, 0, 0, -327661, 536870913, 0, -262134, 1, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262124, 536870913, 0, -196599, 1, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196587, 536870913, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131046, 1, 0, -131045, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 0, 0, -65534, 0, 0, -65511, 1, 0, -65510, 0, 0, 2, 0, 0, 24, 1, 0, 25, 0, 0, 26, 0, 0, 65538, 0, 0, 65559, 1, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 131094, 1, 0, 131095, 0, 0, 131096, 0, 0, 196614, 0, 0, 196629, 1, 0, 196630, 0, 0, 262150, 0, 0, 262164, 1, 0, 262165, 0, 0, 262166, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="KinematicBody2D" parent="TileMap" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -9, -66 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 3 )
+_sections_unfolded = [ "Drag Margin" ]
+trgt = NodePath("../TileMap/KinematicBody2D")
+
+

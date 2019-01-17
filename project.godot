@@ -10,8 +10,8 @@ config_version=3
 
 [application]
 
-config/name="GroupProject"
-run/main_scene="res://levels/worldK2D.tscn"
+config/name="platformer"
+run/main_scene="res://levels/tileSet_level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
