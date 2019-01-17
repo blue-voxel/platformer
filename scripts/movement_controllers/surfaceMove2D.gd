@@ -9,7 +9,7 @@ const FORCES = Vector2(0,200) #this should be inherited or read from utility in 
 
 export (float) var topSpeed = 120 #maximum speed (decimeters?)
 export (float) var damping = 1 #time (seconds) to reach top speed
-export (float) var repulsion = 5
+export (float) var repulsion = 2
 
 const CUTOFF = 0.1 #acceptable threshold to target speed
 var velocity = Vector2()
@@ -26,7 +26,6 @@ func _physics_process(delta):
 		var foot_pos = $foot.global_position - footing['position']
 		foot_psh = foot_pos.length() * foot_pos.normalized() * -repulsion * inMap.move.y
 		velocity += foot_psh
-		print(foot_psh)
 
 	var walkTarg = inMap.move.x * topSpeed
 	if 0 < damping:
