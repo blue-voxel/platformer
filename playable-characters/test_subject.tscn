@@ -8,10 +8,11 @@
 
 custom_solver_bias = 0.0
 radius = 4.0
-height = 6.5
+height = 4.0
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
+position = Vector2( 3, 0 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 1
@@ -27,12 +28,26 @@ texture = ExtResource( 2 )
 
 [node name="hit-collider" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="foot" type="Node2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="2"]
 
-position = Vector2( 0, 3 )
+position = Vector2( 0, 2 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_mask = 4
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
+radius = 7.0
+angle = 70.0
+normal = 0.0
+resolution = 11
 
 
