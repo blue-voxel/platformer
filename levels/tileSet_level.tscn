@@ -4,7 +4,7 @@
 [ext_resource path="res://playable-characters/test_subject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/trackTarget.gd" type="Script" id=3]
 
-[node name="world" type="Node" index="0"]
+[node name="world" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

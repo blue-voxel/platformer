@@ -17,6 +17,9 @@ var walk = 0.0
 func _physics_process(delta):
 	velocity += FORCES * delta
 
+	var footing = $foot.get_footing()
+	if footing:
+		print (footing['position'])
 	var walkTarg = inMap.move.x * topSpeed
 	if 0 < damping:
 		var dWalk = walkTarg - velocity.x
