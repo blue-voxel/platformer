@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/movement_controllers/surfaceMove2D.gd" type="Script" id=1]
 [ext_resource path="res://sprites/bot.png" type="Texture" id=2]
-[ext_resource path="res://scripts/repel2D.gd" type="Script" id=3]
+[ext_resource path="res://scripts/repel2D_debug.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -10,12 +10,7 @@ custom_solver_bias = 0.0
 radius = 4.0
 height = 6.5
 
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 6.0
-
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 2
@@ -35,24 +30,9 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="foot" type="Area2D" parent="." index="2"]
+[node name="foot" type="Node2D" parent="." index="2"]
 
-position = Vector2( 0, 5 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 1028
-audio_bus_override = false
-audio_bus_name = "Master"
+position = Vector2( 0, 3 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Collision" ]
-repulsion = 20
-
-[node name="foot_collider" type="CollisionShape2D" parent="foot" index="0"]
-
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 

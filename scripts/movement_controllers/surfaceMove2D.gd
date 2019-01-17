@@ -5,7 +5,7 @@ extends KinematicBody2D
 #and moevemnt speed is determined by the friction on that surface and the force acting on the body towards that surface
 #implemented properly it should provide an elegant mathematical solution for walking, sliding wallrunning, walljumping, etc.
 
-const FORCES = Vector2(0,695) #this should be inherited or read from utility in future iterations
+const FORCES = Vector2(0,98) #this should be inherited or read from utility in future iterations
 
 export (float) var topSpeed = 120 #maximum speed (decimeters?)
 export (float) var damping = 1 #time (seconds) to reach top speed

@@ -4,7 +4,7 @@
 [ext_resource path="res://playable-characters/test_subject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/trackTarget.gd" type="Script" id=3]
 
-[node name="world" type="Node"]
+[node name="world" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -29,13 +29,13 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="KinematicBody2D" parent="TileMap" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -9, -66 )
+position = Vector2( -14.9439, -70.8632 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 0.5, 0.5 )
 limit_left = -10000000
 limit_top = -10000000
