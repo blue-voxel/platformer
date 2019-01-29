@@ -1,5 +1,5 @@
 extends Area2D
-
+#current class structure of this script is a bit whack, it needs to broken down to force_field>repel>foot or something similar
 export (float) var radius = 7 setget _set_radius
 export (float, 0, 360, 1) var angle = 70 setget _set_angle
 export (float, 0, 360, 1) var normal = 0 setget _set_normal # not yet implemented

@@ -24,10 +24,10 @@ func _physics_process(delta):
 	var footing = $foot.get_footing()
 	if footing:
 		var foot_pos = $foot.global_position - footing['position']
-		foot_psh = foot_pos.length() * foot_pos.normalized() * -repulsion * inMap.move.y
+		foot_psh = foot_pos.length() * foot_pos.normalized() * repulsion * inMap.move_y
 		velocity += foot_psh
 
-	var walkTarg = inMap.move.x * topSpeed
+	var walkTarg = inMap.move_x * topSpeed
 	if 0 < damping:
 		var dWalk = walkTarg - velocity.x
 		if CUTOFF < abs(dWalk): 

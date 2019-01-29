@@ -30,6 +30,7 @@ _sections_unfolded = [ "Cell" ]
 [node name="KinematicBody2D" parent="TileMap" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -14.9439, -70.8632 )
+repulsion = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
