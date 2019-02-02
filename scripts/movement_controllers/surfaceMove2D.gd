@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 #Surface move is intended to be 2d platformer controller that is direction/gravity agnostic
-#movement direction is detirmind by the colion normal of the KInematic body (ie the direction of the floor)
-#and moevemnt speed is determined by the friction on that surface and the force acting on the body towards that surface
+#movement direction is detirmined by the collision normal of the KInematic body (ie the direction of the floor)
+#and movement speed is determined by the friction on that surface and the force acting on the body towards that surface
 #implemented properly it should provide an elegant mathematical solution for walking, sliding wallrunning, walljumping, etc.
 
 const FORCES = Vector2(0,200) #this should be inherited or read from utility in future iterations
@@ -27,6 +27,9 @@ func _physics_process(delta):
 		foot_psh = foot_pos.length() * foot_pos.normalized() * repulsion * inMap.move_y
 		velocity += foot_psh
 
+		print(footing.normal)
+
+
 	var walkTarg = inMap.move_x * topSpeed
 	if 0 < damping:
 		var dWalk = walkTarg - velocity.x
@@ -37,5 +40,5 @@ func _physics_process(delta):
 	else:
 		velocity.x = walkTarg
 	#not that movement is implemented directly rather than with forces. This allows for more direct control and responsiveness but may need to be changed if compaitibility issues mount
-	velocity =  move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 	pass

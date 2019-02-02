@@ -26,7 +26,6 @@ func get_move():
 	
 	move_x = utils.cutoff(move.x, -1)
 	move_y = utils.absolutise(move.y * -1)
-	print(move_y)
 	if 1 < move.length_squared():
 		move = move.normalized()
 	return move
@@ -39,7 +38,6 @@ func get_look(from = null, deg = false, pos = false):
 		var mouse = view.get_mouse_position() - view.get_visible_rect().size / 2
 		if from: #not currently working
 			look = mouse.angle_to(from)
-			print (look)
 		else:
 			look = mouse.angle()
 	if deg:	
