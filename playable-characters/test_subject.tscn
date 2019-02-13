@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 topSpeed = 120
 damping = 1
-repulsion = 2
+repulsion = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
